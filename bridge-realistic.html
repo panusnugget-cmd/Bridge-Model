@@ -1,0 +1,156 @@
+<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>สะพานรถไฟ บึงเสนาท–เจริญผล: เลือกแบบและจำลองก่อสร้าง 3 มิติ</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f3ee;--sf:#fff;--tx:#1d2330;--mu:#5d6676;--ac:#8c1c24;--ln:#d8d3c8;--ok:#2f7d4f;--wk:#d98a1f;--s1:#b9d4ea;--s2:#eef4f8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171d;--sf:#1d222b;--tx:#e8eaee;--mu:#9aa3b2;--ac:#e0646c;--ln:#343b48;--ok:#5bbd83;--wk:#f0a84a;--s1:#1f3347;--s2:#3a4f63;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14171d;--sf:#1d222b;--tx:#e8eaee;--mu:#9aa3b2;--ac:#e0646c;--ln:#343b48;--ok:#5bbd83;--wk:#f0a84a;--s1:#1f3347;--s2:#3a4f63;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 15px/1.65 "IBM Plex Sans Thai",system-ui,sans-serif}
+main{max-width:960px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:23px;line-height:1.3;margin:0 0 4px}h2{font-size:17px;margin:28px 0 8px;border-left:4px solid var(--ac);padding-left:10px}
+p,li{color:var(--mu)}.card{background:var(--sf);border:1px solid var(--ln);border-radius:6px;padding:12px;margin:8px 0}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}label{font-size:13px;color:var(--mu);display:block}
+input,select{width:100%;box-sizing:border-box;font:inherit;padding:5px 7px;border:1px solid var(--ln);border-radius:4px;background:var(--bg);color:var(--tx)}
+input[type=checkbox]{width:auto}.ck{display:flex;gap:6px;align-items:center;font-size:14px;color:var(--tx)}
+button{font:inherit;font-size:14px;padding:5px 12px;border:1px solid var(--ac);background:var(--ac);color:#fff;border-radius:4px;cursor:pointer}button.o{background:none;color:var(--ac)}
+button:focus-visible,input:focus-visible,select:focus-visible,tr:focus-visible{outline:2px solid var(--wk);outline-offset:2px}
+#cv{position:relative;height:min(64vw,460px);min-height:280px;background:linear-gradient(var(--s1),var(--s2) 65%);border-radius:4px;overflow:hidden;touch-action:none;cursor:grab}#cv canvas{display:block;width:100%;height:100%}
+.bar{display:flex;gap:8px;align-items:center;margin:8px 0;flex-wrap:wrap}.bar input[type=range]{flex:1;min-width:140px}
+.st{font-weight:600;color:var(--tx);min-height:3.2em}.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border-bottom:1px solid var(--ln);padding:6px 8px;text-align:left;vertical-align:top}th{color:var(--tx);white-space:nowrap}td.v{font-weight:600;color:var(--tx);white-space:nowrap;text-align:right}td.f{color:var(--mu);font-size:13px}
+tr.r{cursor:pointer}tr.r:hover td,tr.sel td{background:color-mix(in srgb,var(--wk) 14%,transparent)}tr.sel td:first-child{box-shadow:inset 4px 0 var(--ac)}
+</style></head><body><main>
+<h1>สะพานรถไฟ ช่วงบึงเสนาท → เจริญผล<br>เลือกแบบสะพานและจำลองก่อสร้าง 3 มิติ</h1>
+<p>หน้านี้ครอบคลุมเฉพาะส่วนสะพาน ตรงกับข้อ 4 ในตารางสรุปปัญหา “เลือกใช้รูปแบบสะพานรถไฟตามแบบ Typical โดยใช้หลักวิศวกรรม” และเกี่ยวข้องกับข้อ 3 (จุดตัดทางผ่าน) ส่วนแนวเส้นทาง คันทาง สถานี และราคา ไม่ได้อยู่ในหน้านี้ ข้อมูลตำแหน่งมาจากไฟล์ Excel จุดตัดที่แนบมา แบบ Typical มาจากไฟล์ Capstone และสไลด์ Preliminary Design</p>
+
+<h2>1. หลักเกณฑ์เลือกแบบสะพาน</h2>
+<div class="card tw"><table><thead><tr><th>สิ่งที่สะพานข้าม</th><th>ความกว้างที่ต้องลอด (สมมติ)</th><th>ช่วงสะพานที่เลือก</th><th>แบบ Typical ที่ใช้</th><th>รายละเอียดตามแบบ</th></tr></thead><tbody>
+<tr><td>ถนนดินลูกรัง 2 ช่องจราจร</td><td>6 ม. + ไหล่ทาง 2×1 = 8 ม.</td><td>10 ม. ช่วงเดียว</td><td>2RCS10-10M พื้น คสล.</td><td class="f">ตอม่อริมสะพาน AS2D-7 สูงสุด 7.0 ม.</td></tr>
+<tr><td>ถนนยางมะตอยหรือคอนกรีต 2 ช่องจราจร</td><td>7 ม. + ไหล่ทาง 2×1.5 = 10 ม.</td><td>15 ม. ช่วงเดียว</td><td>2PCBG15-15M PC box girder</td><td class="f">ตอม่อริมสะพาน AB1D-5 สูงสุด 5.0 ม.</td></tr>
+<tr><td>ถนน 4 ช่องจราจร มีเกาะกลาง</td><td>2×(7+2×1) + เกาะกลาง 3 = 21–22 ม.</td><td>15 + 15 ม. วางตอม่อกลางเกาะ</td><td>2PCBG15-15M ต่อกัน 2 ช่วง</td><td class="f">มีรอยต่อ EJ ที่หัวตอม่อ</td></tr>
+<tr><td>คลอง (ความกว้างผิวน้ำสมมติ 12 ม. + ทางเดินริมคลอง)</td><td>12 + 2×2.5 = 17 ม.</td><td>20 ม. ช่วงเดียว</td><td>2PCIG30-30M PC I-girder (ช่วง 20–30 ม.)</td><td class="f">ตอม่อ A10 / P30-5, P30-10</td></tr>
+<tr><td>แม่น้ำหรือช่วงมากกว่า 40 ม. (ไม่มีในช่วงนี้)</td><td>มากกว่า 40 ม.</td><td>40–50 ม.</td><td>2TT50-50M โครงถักเหล็ก</td><td class="f">PT50C-7.5 พร้อมช่วงต่อ PC I-girder 30 ม.</td></tr></tbody></table>
+<p style="margin:8px 0 0;font-size:13px">หลักคิด: ช่วงสะพานต้องไม่น้อยกว่า ความกว้างที่ต้องลอด + 2 ม. แล้วปัดขึ้นเป็นช่วงมาตรฐานของแบบ Typical (10, 15, 20–30, 40–50 ม.) ความกว้างถนนเป็นค่าสมมติจากชนิดถนนในแผนที่ ควรแทนด้วยหน้าตัดถนนจริง</p></div>
+
+<h2>2. ตารางสะพานตามจุดตัดในช่วง STA 3+600 – 38+100</h2>
+<div class="card tw"><table id="bt"></table>
+<p style="margin:8px 0 0;font-size:13px">คลิกแถวเพื่อดูสะพานนั้นในโมเดล STA Capstone = STA ตามไฟล์ − 5,137 ม. (ไฟล์ระบุ “ส่วนต่าง 5137” คือระยะจากสถานีนครสวรรค์ถึงปากน้ำโพ) พิกัด Lat/Long ของ B1–B6 มาจากไฟล์ ส่วน B7 แปลงจากพิกัด UTM (E, N) ในแผ่น “ข้ามคลอง”</p></div>
+
+<h2>3. โมเดลสะพาน 3 มิติ</h2>
+<div class="card g">
+<div><label for="bs">สะพาน</label><select id="bs"></select></div>
+<div><label for="ty">แบบสะพาน</label><select id="ty"><option value="S">พื้น คสล. ตัน 10 ม.</option><option value="B">PC box girder 15 ม.</option><option value="I">PC I-girder 20–30 ม.</option></select></div>
+<div><label for="ns">จำนวนช่วงต่อกัน</label><input id="ns" type="number" min="1" max="4"></div>
+<div><label for="L">ความยาวช่วง (ม.)</label><input id="L" type="number" min="8" max="30"></div>
+<div><label for="cl">ความสูงใต้ท้องสะพาน (ม.)</label><input id="cl" type="number" step="0.1" min="3" value="4.5"></div>
+<div><label for="ax">น้ำหนักเพลา</label><select id="ax"><option value="160">LM71 × 0.8 = 160 kN</option><option value="196.2">เพลา 20 ตัน = 196.2 kN</option></select></div>
+</div>
+<details class="card"><summary style="cursor:pointer;color:var(--tx)">ระยะเวลาแต่ละขั้นตอน (วัน, ค่าสมมติ)</summary><div class="g" style="margin-top:8px">
+<div><label for="d1">เสาเข็ม/จุด</label><input id="d1" type="number" value="6"></div><div><label for="d2">ฐานราก/จุด</label><input id="d2" type="number" value="4"></div><div><label for="d3">กำแพง/ตอม่อ/จุด</label><input id="d3" type="number" value="6"></div><div><label for="d4">ยกคาน/ช่วง</label><input id="d4" type="number" value="3"></div><div><label for="d5">เทพื้น+EJ/ช่วง</label><input id="d5" type="number" value="6"></div><div><label for="d6">ถมคันทาง+แผ่นเชื่อม</label><input id="d6" type="number" value="8"></div><div><label for="d7">หินโรยทาง หมอน ราง</label><input id="d7" type="number" value="5"></div></div></details>
+<div class="card"><div id="cv" role="img" aria-label="ภาพ 3 มิติสะพานรถไฟ ลากเพื่อหมุน เลื่อนลูกกลิ้งเพื่อซูม"></div>
+<div class="bar"><button id="pl">เล่น</button><input id="t" type="range" min="0" max="100" value="0" aria-label="วันที่ก่อสร้าง"></div>
+<div class="bar"><button class="o" data-v="0">มุมเฉียง</button><button class="o" data-v="1">ด้านข้าง</button><button class="o" data-v="2">หน้าตัดตามขวาง</button><button class="o" data-v="3">มุมสูง</button><button class="o" data-v="4">ซูมรอยต่อ EJ</button></div>
+<div class="bar"><label class="ck"><input type="checkbox" id="ug" checked>มองใต้ดิน (เห็นเสาเข็ม)</label><label class="ck"><input type="checkbox" id="nt">ซ่อนหินโรยทางและราง</label><label class="ck"><input type="checkbox" id="mk" checked>ทำเครื่องหมายรอยต่อ</label></div>
+<div id="info" class="st"></div>
+<p style="margin:4px 0 0;font-size:13px">ลากเพื่อหมุน ลูกกลิ้ง/บีบนิ้วเพื่อซูม ส้ม = กำลังทำ รอยต่อสีเหลืองคือจุดรอยต่อ (EJ) ระหว่างคานสองช่วงและระหว่างคานกับกำแพงหลังสถานี ถนนที่สะพานข้ามพาดตามแนวขวางรางตามชนิดถนนในแผนที่</p></div>
+<div class="card tw" id="sum"></div>
+
+<h2>4. ตัวอย่างการคำนวณ (ช่วงที่เลือก)</h2>
+<div class="card tw"><table><thead><tr><th>#</th><th>รายการ</th><th>สูตร / ค่าที่ใช้</th><th style="text-align:right">ผล</th></tr></thead><tbody id="calc"></tbody></table></div>
+
+<h2>5. รายการที่ต้องตรวจสอบเพิ่ม</h2>
+<div class="card tw"><table id="ot"></table></div>
+<h2>6. ข้อสังเกตและข้อจำกัด</h2>
+<div class="card"><ul id="notes" style="margin:0;padding-left:18px"></ul></div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const D={"br":[{"id":"B1","kind":"road","sta":12309,"fsta":17446.5,"lat":15.81638,"lon":100.148462,"E":622994,"N":1748961,"rt":"ถนนดินลูกรัง 2 ช่องจราจร","w":8,"rw":7,"t":"S","spans":[10],"src":"จุดตัดลำดับ 3 / IR6"},{"id":"B2","kind":"road","sta":15271,"fsta":20407.9,"lat":15.842933,"lon":100.144964,"E":622604,"N":1751896,"rt":"ถนนยางมะตอย 2 ช่องจราจร","w":10,"rw":10,"t":"B","spans":[15],"src":"จุดตัดลำดับ 4 / IR7"},{"id":"B3","kind":"road","sta":19468,"fsta":24604.9,"lat":15.874986,"lon":100.127586,"E":620724,"N":1755432,"rt":"ถนนยางมะตอย 2 ช่องจราจร","w":10,"rw":10,"t":"B","spans":[15],"src":"จุดตัดลำดับ 5 / IR11"},{"id":"B4","kind":"road","sta":20907,"fsta":26044.0,"lat":15.880614,"lon":100.115485,"E":619425,"N":1756048,"rt":"ถนน 4 ช่องจราจร มีเกาะกลาง (ทล.117)","w":22,"rw":21,"t":"B","spans":[15,15],"src":"จุดตัดลำดับ 6 / IR12"},{"id":"B5","kind":"road","sta":25942,"fsta":31078.6,"lat":15.888726,"lon":100.070116,"E":614562,"N":1756920,"rt":"ถนนยางมะตอย 2 ช่องจราจร","w":10,"rw":10,"t":"B","spans":[15],"src":"จุดตัดลำดับ 7 / IR15"},{"id":"B6","kind":"road","sta":30368,"fsta":35505.4,"lat":15.920842,"lon":100.045711,"E":611932,"N":1760460,"rt":"ถนนยางมะตอย 2 ช่องจราจร","w":10,"rw":10,"t":"B","spans":[15],"src":"จุดตัดลำดับ 8 / IR17"},{"id":"B7","kind":"canal","sta":35827,"fsta":40964,"lat":15.960206,"lon":100.015225,"E":608647,"N":1764798,"rt":"คลอง + ถนนลูกรังขนานคลอง (CW2/IR18)","w":17,"rw":12,"t":"I","spans":[20],"src":"CW2 (ไม่อยู่ในตารางจุดตัด)"}],"st":[["ปากน้ำโพ",0,"-"],["บึงเสนาท",3600,"กลาง"],["บ้านมะเกลือ",10350,"เล็ก"],["มหาโพธิ์",15750,"เล็ก"],["หังดง",23200,"กลาง"],["บางตาหงาย",30175,"เล็ก"],["เจริญผล",38100,"กลาง"]],"out":[{"n":"จุดตัดลำดับ 2 ถนนท้องถิ่น (ตามไฟล์ Short span)","sta":2401,"why":"อยู่ก่อนสถานีบึงเสนาท (3+600) จึงนอกช่วง"},{"n":"Overpass ถนน รทช. นว.1073 (IR19/CW3)","sta":37340,"why":"ถนนยกข้ามทางรถไฟ ไม่ใช่สะพานรถไฟ"},{"n":"ถนนในแผนที่ที่ไม่อยู่ในตารางจุดตัด: IR3 ลูกรัง","sta":4910,"why":"ควรตรวจว่าต้องมีสะพานหรือปิดถนน"},{"n":"IR4 ถนนเลี่ยงเมือง (1084)","sta":6704,"why":"ถนนสายหลัก ควรมีสะพานหรือจุดตัดต่างระดับ"},{"n":"IR5 ถนนยางมะตอย 2 ช่องจราจร","sta":10038,"why":"ควรตรวจสอบ"},{"n":"IR13 (ไม่ระบุชนิด)","sta":22291,"why":"ควรตรวจสอบ"},{"n":"IR16 ถนนดินลูกรัง","sta":26808,"why":"ควรตรวจสอบ"}]};
+const $=i=>document.getElementById(i),cl=(x,a,b)=>Math.min(b,Math.max(a,x)),fm=(x,d=0)=>x.toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d}),g=i=>+$(i).value;
+const fs=k=>Math.floor(k/1000)+"+"+String(Math.round(k%1000)).padStart(3,"0"),TN={S:"พื้น คสล. ตัน (2RCS10-10M)",B:"PC box girder (2PCBG15-15M)",I:"PC I-girder (2PCIG30-30M)"},TA={S:"AS2D-7 สูงสุด 7.0 ม.",B:"AB1D-5 สูงสุด 5.0 ม.",I:"A10 สูงสุด 5.0 ม. ตอม่อ P30-5 / P30-10"};
+const near=s=>{let a=D.st[0],b=D.st[1];for(let i=0;i<D.st.length-1;i++)if(s>=D.st[i][1]){a=D.st[i];b=D.st[i+1]}return a[0]+" – "+b[0]};
+let sel=0;
+$("bt").innerHTML="<thead><tr><th>รหัส</th><th>STA Capstone</th><th>STA ตามไฟล์</th><th>อยู่ระหว่างสถานี</th><th>Lat, Long</th><th>สิ่งที่ข้าม</th><th>แบบที่เลือก</th><th>จัดช่วง</th><th>ที่มา</th></tr></thead><tbody>"+D.br.map((b,i)=>`<tr class="r" tabindex="0" data-i="${i}"><td>${b.id}</td><td>${fs(b.sta)}</td><td>${fs(b.fsta)}</td><td>${near(b.sta)}</td><td>${b.lat}, ${b.lon}</td><td>${b.rt}</td><td>${TN[b.t]}</td><td>${b.spans.join(" + ")} ม.</td><td class="f">${b.src}</td></tr>`).join("")+"</tbody>";
+$("bs").innerHTML=D.br.map((b,i)=>`<option value="${i}">${b.id} · STA ${fs(b.sta)} · ${b.rt}</option>`).join("");
+$("ot").innerHTML="<thead><tr><th>รายการ</th><th>STA Capstone (ประมาณ)</th><th>เหตุผล</th></tr></thead><tbody>"+D.out.map(o=>`<tr><td>${o.n}</td><td>${fs(o.sta)}</td><td class="f">${o.why}</td></tr>`).join("")+"</tbody>";
+let ok=false,sc,cam,ren,grp,gnd,TK=[],V={a:.8,e:.4,d:60,x:0,y:3,z:0},IM,MK=[],BL=[],TOT=0,YD=0,XS=[];
+try{ren=new THREE.WebGLRenderer({antialias:true,alpha:true});ok=true}catch(e){$("cv").textContent="อุปกรณ์นี้ไม่รองรับ WebGL"}
+if(ok){sc=new THREE.Scene();cam=new THREE.PerspectiveCamera(45,2,.5,2000);$("cv").appendChild(ren.domElement);
+sc.add(new THREE.HemisphereLight(0xffffff,0x7d8a62,.9));const dl=new THREE.DirectionalLight(0xffffff,.75);dl.position.set(60,120,50);sc.add(dl);
+gnd=new THREE.Mesh(new THREE.PlaneGeometry(700,400),new THREE.MeshLambertMaterial({color:0x9bb56f,transparent:true}));gnd.rotation.x=-Math.PI/2;sc.add(gnd);
+const cv=$("cv");let dr=null,pd=0;cv.addEventListener("pointerdown",e=>{dr=[e.clientX,e.clientY];cv.setPointerCapture(e.pointerId)});cv.addEventListener("pointerup",()=>dr=null);
+cv.addEventListener("pointermove",e=>{if(!dr)return;V.a-=(e.clientX-dr[0])*.008;V.e=cl(V.e+(e.clientY-dr[1])*.006,.03,1.5);dr=[e.clientX,e.clientY];cm()});
+cv.addEventListener("wheel",e=>{e.preventDefault();V.d=cl(V.d*(1+e.deltaY*.001),6,500);cm()},{passive:false});
+cv.addEventListener("touchmove",e=>{if(e.touches.length==2){const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);if(pd)V.d=cl(V.d*pd/d,6,500);pd=d;cm()}else pd=0},{passive:true});
+addEventListener("resize",sz)}
+function sz(){if(!ok)return;const c=$("cv");ren.setSize(c.clientWidth,c.clientHeight,false);cam.aspect=c.clientWidth/c.clientHeight;cam.updateProjectionMatrix();cm()}
+function cm(){if(!ok)return;cam.position.set(V.x+V.d*Math.cos(V.e)*Math.cos(V.a),V.y+V.d*Math.sin(V.e),V.z+V.d*Math.cos(V.e)*Math.sin(V.a));cam.lookAt(V.x,V.y,V.z);ren.render(sc,cam)}
+const MT={c:0xbdb9b0,c2:0xa5a198,pile:0x8e8a82,br:0x2a2a2a,j:0x16181c,ye:0xe3b020,bal:0x77736d,sl:0xa8a39a,rail:0x2b2f36,as:0x45484d,lat:0xb4824f,gr:0x7fa05a,wa:0x4a90b8,em:0x8fa062,ap:0x8d897f};
+const M={};for(const k in MT)M[k]=new THREE.MeshLambertMaterial({color:MT[k]});
+function bx(w,h,d,x,y,z,m,p){const ge=new THREE.BoxGeometry(w,h,d);ge.translate(0,h/2,0);const o=new THREE.Mesh(ge,m);o.position.set(x,y,z);(p||grp).add(o);return o}
+function cyl(r,h,x,y,z,m){const ge=new THREE.CylinderGeometry(r,r,h,12);ge.translate(0,h/2,0);const o=new THREE.Mesh(ge,m);o.position.set(x,y,z);grp.add(o);return o}
+const tk=(n,d)=>{TK.push({n,d,s:0,e:0,o:[]});return TK.length-1},rg=(o,t,m,k,n)=>TK[t].o.push({o,m,k,n});
+function build(){if(!ok)return;if(grp)sc.remove(grp);grp=new THREE.Group();sc.add(grp);TK=[];MK=[];BL=[];
+const b=D.br[sel],ty=$("ty").value,ns=cl(g("ns")|0,1,4),L=g("L"),c=g("cl"),W=10.4,gd=ty=="I"?Math.max(1.4,L/15):0,ds=ty=="S"?.7:ty=="B"?1.1:gd+.25,yu=c,yd=yu+ds,yc=yu-.2,yb=yd+.35,Ld=L-.1,xs=[];for(let i=0;i<=ns;i++)xs.push(i*L);TOT=ns*L;YD=yd;XS=xs;
+const nm=k=>k==0?"A1":k==ns?"A2":"P"+k;
+xs.forEach((x,k)=>{const ab=k==0||k==ns,dir=k==0?-1:1,tp=tk("เจาะเสาเข็ม "+nm(k),g("d1")),tf=tk("หล่อฐานราก "+nm(k),g("d2")),tw=tk((ab?"กำแพงสถานและกำแพงหลัง ":"เสาตอม่อและคานหมวกเสา ")+nm(k),g("d3")),
+rx=ab?[-1.2,0,1.2]:[-.7,.7],cz=ab?[-4.5,-2.7,-.9,.9,2.7,4.5]:[-3.6,-1.2,1.2,3.6],n=rx.length*cz.length,fx=ab?x+dir*.3:x;let q=0;
+rx.forEach(r=>cz.forEach(z=>rg(cyl(.3,14,fx+r,-16,z,M.pile),tp,"seq",q++,n)));
+rg(bx(ab?3.6:2.6,1.2,ab?10.8:8.2,fx,-2,0,M.c2),tf,"grow");
+if(ab){rg(bx(1.9,yc+.8,W,x+dir*.05,-.8,0,M.c),tw,"grow");rg(bx(.45,yd-yc,W,x+dir*.275,yc,0,M.c),tw,"grow")}
+else{[-2.7,2.7].forEach(z=>rg(cyl(.6,yc-.7,x,-.8,z,M.c),tw,"grow"));rg(bx(1.8,1.5,9.6,x,yc-1.5,0,M.c),tw,"show")}});
+const zb=ty=="S"?[-3.9,-1.3,1.3,3.9]:ty=="B"?[0,1,2,3,4,5,6,7].map(j=>-4.55+1.3*j):[0,1,2,3,4,5].map(j=>-4.5+1.8*j),tdi=[];
+for(let i=0;i<ns;i++){const x0=xs[i]+.05,xc=xs[i]+L/2,gm=new THREE.Group();gm.userData.y0=0;grp.add(gm);
+const tg=tk((ty=="S"?"ตั้งแบบและเทพื้นสะพาน คสล. ช่วงที่ ":"ติดตั้ง bearing และยกคานช่วงที่ ")+(i+1),g("d4")),td=tk("เทพื้น คานขวาง ราวกันตก และรอยต่อ EJ ช่วงที่ "+(i+1),g("d5"));tdi.push(td);
+zb.forEach(z=>[x0+.4,x0+Ld-.4].forEach(x=>rg(bx(.4,.15,.5,x,yc,z,M.br),tg,"show")));
+if(ty=="S")bx(Ld,.7,W,xc,yu,0,M.c,gm);
+else if(ty=="B")zb.forEach(z=>bx(Ld,.9,1.26,xc,yu,z,M.c2,gm));
+if(ty=="I"){zb.forEach(z=>{bx(Ld,.25,.6,xc,yu,z,M.c,gm);bx(Ld,gd-.45,.25,xc,yu+.25,z,M.c,gm);bx(Ld,.2,.8,xc,yu+gd-.2,z,M.c,gm)});[x0+.35,xc,x0+Ld-.35].forEach(x=>rg(bx(.3,gd-.5,9.0,x,yu+.25,0,M.c2),td,"show"))}
+rg(gm,tg,"drop");
+if(ty!="S"){const t=ty=="B"?.2:.25;rg(bx(Ld,t,W,xc,yd-t,0,M.c),td,"show")}
+[-5,5].forEach(z=>rg(bx(Ld,1.1,.4,xc,yd,z,M.c2),td,"show"))}
+xs.forEach((x,k)=>{const t=tdi[k==ns?ns-1:k];rg(bx(.1,ds,W,x,yu,0,M.j),t,"show");const m=new THREE.Mesh(new THREE.ConeGeometry(.28,.8,12),M.ye);m.rotation.x=Math.PI;m.position.set(x,yd+2.2,0);grp.add(m);MK.push(m);rg(m,t,"show");
+[-5,5].forEach(z=>{const s=bx(.14,1.1,.42,x,yd,z,M.ye);rg(s,t,"show");MK.push(s)})});
+const tf2=tk("ถมคันทางหลังสถานีและวางแผ่นเชื่อม (approach slab)",g("d6")),hE=yd-.1,BW=12+4*hE,sh=new THREE.Shape();sh.moveTo(-BW/2,0);sh.lineTo(BW/2,0);sh.lineTo(6,hE);sh.lineTo(-6,hE);sh.closePath();
+[[-30.5,-5.5],[TOT+.5,TOT+5.5]].forEach(a=>{const e=new THREE.Mesh(new THREE.ExtrudeGeometry(sh,{depth:30,bevelEnabled:false}),M.em);e.rotation.y=Math.PI/2;e.position.x=a[0];grp.add(e);rg(e,tf2,"show");rg(bx(10,.1,9.6,a[1]+(a[1]<0?0:0),yd-.1,0,M.ap),tf2,"show");
+rg(bx(.06,.1,9.6,a[1]<0?-.5:TOT+.5,yd-.1,0,M.j),tf2,"show")});
+const tt=tk("หินโรยทาง หมอนคอนกรีต (ห่าง 0.6 ม.) และราง 54E1",g("d7")),bl=bx(TOT+48,.35,9.2,TOT/2,yd,0,M.bal);rg(bl,tt,"show");BL.push(bl);
+const xsl=[];for(let x=-23.7;x<TOT+23.8;x+=.6)xsl.push(x);IM=new THREE.InstancedMesh(new THREE.BoxGeometry(.25,.2,2.0),M.sl,xsl.length*2);let q=0;const mt=new THREE.Matrix4();xsl.forEach(x=>[-2.5,2.5].forEach(z=>{mt.setPosition(x,yb+.05,z);IM.setMatrixAt(q++,mt)}));grp.add(IM);rg(IM,tt,"count",q);BL.push(IM);
+[-3,-2,2,3].forEach(z=>{const r=bx(TOT+48,.16,.07,TOT/2,yb+.15,z,M.rail);rg(r,tt,"show");BL.push(r)});
+const xr=TOT/2,rw=b.rw,rd=(w,x,m,y)=>{const p=new THREE.Mesh(new THREE.PlaneGeometry(w,160),m);p.rotation.x=-Math.PI/2;p.position.set(x,y||.03,0);grp.add(p)};
+if(b.kind=="canal"){rd(12,xr,M.wa,.05);rd(.5,xr-6.25,M.c2,.06);rd(.5,xr+6.25,M.c2,.06)}else if(b.rt.indexOf("ลูกรัง")>=0)rd(rw,xr,M.lat);
+else if(b.rt.indexOf("เกาะกลาง")>=0){rd(9,xr-6,M.as);rd(9,xr+6,M.as);bx(3,.25,160,xr,0,0,M.gr);[-10.3,-6,-1.7,1.7,6,10.3].forEach(o=>rd(.12,xr+o,M.ap,.04))}
+else{rd(rw,xr,M.as);rd(.12,xr,M.ap,.04);[-4.4,4.4].forEach(o=>rd(.12,xr+o,M.ap,.04))}
+setU();vis();V.x=TOT/2;V.y=yd*.55;V.z=0;V.d=cl(TOT*1.1+38,40,300);let s=0;TK.forEach(t=>{t.s=s;t.e=s+t.d;s+=t.d});$("t").max=Math.ceil(s);$("t").value=0;draw()}
+function setU(){if(!ok)return;gnd.material.opacity=$("ug").checked?.28:1;gnd.material.needsUpdate=true}
+function vis(){if(!ok)return;BL.forEach(o=>o.userData.hid=$("nt").checked);MK.forEach(m=>m.userData.hid=!$("mk").checked)}
+function draw(){const t=+$("t").value;let cur="",T=0;TK.forEach(k=>{const f=cl((t-k.s)/k.d,0,1);T=k.e;if(f>0&&f<1)cur=k.n;if(!ok)return;k.o.forEach(a=>{const o=a.o;let v=f>0;
+if(a.m=="grow")o.scale.y=Math.max(f,.001);else if(a.m=="seq")v=f>a.k/a.n;else if(a.m=="drop")o.position.y=(1-f)*9;else if(a.m=="count"){o.count=Math.floor(f*a.k);v=f>0}
+if(o.userData.hid)v=false;o.visible=v})});
+cm();$("info").textContent=`วันที่ ${fm(t)} (${fm(t/30,1)} เดือน) · คืบหน้า ${fm(t/T*100)}% — ${t>=T?"โครงสร้างสะพานเสร็จสมบูรณ์":cur||"รอเริ่มขั้นตอนถัดไป"}`}
+function sum(){const b=D.br[sel],ty=$("ty").value,ns=g("ns")|0,L=g("L"),c=g("cl"),ds=ty=="S"?.7:ty=="B"?1.1:Math.max(1.4,L/15)+.25;
+$("sum").innerHTML=`<table><tr><th>สะพาน</th><td class="v">${b.id} STA ${fs(b.sta)}</td><th>ความยาวสะพาน</th><td class="v">${fm(ns*L)} ม.</td></tr><tr><th>แบบ Typical</th><td class="v">${TN[ty]}</td><th>ตอม่อริมสะพานตามแบบ</th><td class="v">${TA[ty]}</td></tr><tr><th>หัวรางสูงจากผิวถนน</th><td class="v">≈ ${fm(c+ds+.35+.31,2)} ม.</td><th>ความยาวรวมถึงปลายแผ่นเชื่อม</th><td class="v">${fm(ns*L+21)} ม.</td></tr></table>`}
+function lm(L,Pw){const q=51.2,ax=[0,1.6,3.2,4.8],gl=4.8,ey=x=>x<L/2?x/2:(L-x)/2,ry=x=>1-x/L,I=(f,a,b)=>{a=Math.max(0,a);b=Math.min(L,b);let s=0;for(let x=a+.05;x<b;x+=.1)s+=f(x)*.1;return s};let Mx=0,R=0;
+for(let s=-gl;s<=L;s+=.2){let m=0,r=0;ax.forEach(d=>{const x=s+d;if(x>=0&&x<=L){m+=Pw*ey(x);r+=Pw*ry(x)}});m+=q*(I(ey,0,s-.8)+I(ey,s+gl+.8,L));r+=q*(I(ry,0,s-.8)+I(ry,s+gl+.8,L));Mx=Math.max(Mx,m);R=Math.max(R,r)}return{M:Mx,R,Pw,q}}
+function calc(){const ty=$("ty").value,ns=g("ns")|0,L=g("L"),A={S:7.3,B:6,I:6.3}[ty],r=Math.sqrt(L)-.2,sw=24.5*A,w=sw+105,Md=w*L*L/8,l=lm(L,g("ax")),p3=cl(2.16/r+.73,1,2),Ml=2*p3*l.M,Mu=1.35*Md+1.45*Ml,Rd=w*L/2,Rl=2*p3*l.R,k=ns>1?2:1,N=k*(1.35*Rd+1.45*Rl),F=Math.max(2*Math.min(33*L,1000),2*Math.min(20*L,6000));
+const R=[["1","น้ำหนักตัวเอง SW","24.5 × A ; A = "+A+" ตร.ม. (ค่าสมมติเทียบเท่าของ "+TN[ty]+")",fm(sw,1)+" kN/m"],["2","SDL ทางคู่","ค่าออกแบบจากสไลด์ Design Criteria","105 kN/m"],["3","น้ำหนักคงที่รวม w","SW + SDL",fm(w,1)+" kN/m"],["4","M กลางช่วง (คงที่)","wL²/8 = "+fm(w,1)+" × "+L+"² / 8",fm(Md)+" kN·m"],
+["5","น้ำหนักจรต่อ 1 ทาง","เพลา "+fm(l.Pw,1)+" kN ×4 ห่าง 1.6 ม. + UDL "+fm(l.q,1)+" kN/m ไล่ตำแหน่งหา Mmax",fm(l.M)+" kN·m"],["6","Dynamic factor Φ₃","2.16/(√L − 0.2) + 0.73",fm(p3,3)],["7","M จากน้ำหนักจร 2 ทาง","2 × Φ₃ × M = 2 × "+fm(p3,3)+" × "+fm(l.M),fm(Ml)+" kN·m"],
+["8","M ประลัยกลางช่วง","1.35 M<sub>DL</sub> + 1.45 M<sub>LL</sub> (ตัวคูณสมมติ)",fm(Mu)+" kN·m"],["9","แรงปฏิกิริยาปลายคาน คงที่ / จร","wL/2 ; 2Φ₃R<sub>LM</sub>",fm(Rd)+" / "+fm(Rl)+" kN"],["10",ns>1?"แรงแนวดิ่งประลัยที่ตอม่อกลาง (รับ 2 ช่วง)":"แรงแนวดิ่งประลัยที่กำแพงสถาน 1 ฝั่ง",ns>1?"2 × (1.35 R<sub>DL</sub> + 1.45 R<sub>LL</sub>)":"1.35 R<sub>DL</sub> + 1.45 R<sub>LL</sub> (ไม่รวมน้ำหนักฐานราก)",fm(N)+" kN"],
+["11","TR / BR 2 ทางวิ่ง","2×min(33L,1000) ; 2×min(20L,6000) ใช้ค่ามาก",fm(F)+" kN"]];
+$("calc").innerHTML=R.map(x=>`<tr><td>${x[0]}</td><td>${x[1]}</td><td class="f">${x[2]}</td><td class="v">${x[3]}</td></tr>`).join("");
+$("notes").innerHTML=["STA Capstone คำนวณจาก STA ตามไฟล์ − 5,137 ม. ตามค่า “ส่วนต่าง” ในไฟล์ Excel แต่ตำแหน่งสถานีของ Capstone (เช่น หังดง 23+200) ต่างจากตำแหน่งสถานีที่แปลงจากไฟล์ (24+063) ได้ถึงราว 0.9 กม. จึงควรยืนยัน STA กับแนวที่ใช้ออกแบบ",
+"ความกว้างถนน ความกว้างคลอง (12 ม.) และความสูงใต้ท้องสะพาน (4.5 ม.) เป็นค่าสมมติ เพราะไฟล์ให้เพียงชนิดถนน ส่วนมิติคานและตอม่อในโมเดล (ความลึกคาน จำนวนคาน เสาเข็ม ⌀0.60 ม. ยาว 14 ม.) ตั้งให้สมเหตุสมผลตามแบบ Typical ไม่ใช่รายละเอียดจริงของแบบ",
+"รอยต่อ EJ ในโมเดลมีช่องว่าง 0.10 ม. ระหว่างปลายคานสองช่วงและระหว่างคานกับกำแพงหลังสถานี พร้อมแผ่นเชื่อม (approach slab) ยาว 10 ม. ตามแบบสะพาน 15 ม. ในไฟล์ Capstone หินโรยทางต่อเนื่องข้ามรอยต่อ ขนาดช่องว่างจริงต้องคำนวณจากอุณหภูมิ การหดตัว และการคืบของคอนกรีต",
+"สไลด์ Capstone ระบุเพลา 20 ตัน (196.2 kN) แต่ Design Criteria ใช้ LM71 × 0.8 (160 kN) เลือกสลับได้เพื่อเทียบ ควรยืนยันกับผู้ออกแบบ",
+"ตารางจุดตัดมีทั้งสะพานรถไฟและ Overpass จุดตัดที่เป็น Overpass (ถนนยกข้ามทางรถไฟ) ไม่นับเป็นสะพานรถไฟ ถนน IR3–IR5 IR13 IR16 และคลอง CW2 ปรากฏในแผนที่แต่ไม่อยู่ในตารางจุดตัด ผมจึงเพิ่ม B7 สำหรับ CW2 และแยกรายการที่เหลือไว้หัวข้อ 5",
+"ภาพ 3 มิติเป็นภาพจำลองเชิงแนวคิดเพื่อนำเสนอ ไม่ใช่แบบก่อสร้าง ไม่รวมแรงชน แรงตกราง อุณหภูมิ แผ่นดินไหว และการออกแบบเสาเข็ม"].map(x=>`<li>${x}</li>`).join("")}
+function pick(i){sel=i;const b=D.br[i];$("bs").value=i;$("ty").value=b.t;$("ns").value=b.spans.length;$("L").value=b.spans[0];document.querySelectorAll("tr.r").forEach(r=>r.classList.toggle("sel",+r.dataset.i==i));all()}
+function all(){sum();calc();build()}
+document.querySelectorAll("tr.r").forEach(r=>{r.onclick=()=>pick(+r.dataset.i);r.onkeydown=e=>{if(e.key=="Enter"||e.key==" "){e.preventDefault();pick(+r.dataset.i)}}});
+$("bs").onchange=()=>pick(g("bs"));["ty","ns","L","cl","ax","d1","d2","d3","d4","d5","d6","d7"].forEach(i=>$(i).onchange=()=>all());
+$("ty").addEventListener("change",()=>{if($("ty").value=="S")$("L").value=10;else if($("ty").value=="B")$("L").value=15;else $("L").value=20;all()});
+$("ug").onchange=()=>{setU();cm()};$("nt").onchange=()=>{vis();draw()};$("mk").onchange=()=>{vis();draw()};$("t").oninput=draw;
+let tm=null;$("pl").onclick=()=>{if(tm){clearInterval(tm);tm=null;$("pl").textContent="เล่น";return}$("pl").textContent="หยุด";if(+$("t").value>=+$("t").max)$("t").value=0;tm=setInterval(()=>{const t=$("t");if(+t.value>=+t.max){clearInterval(tm);tm=null;$("pl").textContent="เล่น";return}t.value=+t.value+Math.max(1,Math.ceil(t.max/220));draw()},60)};
+document.querySelectorAll("button[data-v]").forEach(b=>b.onclick=()=>{const v=+b.dataset.v;V.x=TOT/2;V.y=YD*.55;V.z=0;V.d=cl(TOT*1.1+38,40,300);if(v==0){V.a=.8;V.e=.4}else if(v==1){V.a=Math.PI/2;V.e=.08}else if(v==2){V.a=0;V.e=.06;V.d=45}else if(v==3){V.a=1.2;V.e=1.45}else{V.x=XS[Math.min(1,XS.length-1)];V.y=YD;V.a=.6;V.e=.45;V.d=14}cm()});
+pick(0);sz();
+</script></body></html>
